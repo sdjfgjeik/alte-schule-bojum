@@ -535,6 +535,8 @@ function setupNavigation() {
   const button = document.querySelector(".menu-toggle");
   const panel = document.querySelector(".nav-panel");
   if (!button || !panel) return;
+  if (button.dataset.navigationInitialized === "true") return;
+  button.dataset.navigationInitialized = "true";
   const setOpen = (open) => {
     button.setAttribute("aria-expanded", String(open));
     button.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
