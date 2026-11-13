@@ -1,0 +1,1 @@
+Originalfotos der bisherigen Website, lokal gespeichert und thematisch auf den Seiten „Startseite“ und „Unser Zuhause“ eingesetzt. Die Fundstellen, Varianten und Dateipfade stehen in ../image-sources.csv. Die Auftraggeberin hat die Wiederverwendung bestätigt.
