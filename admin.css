@@ -13,6 +13,7 @@
 .admin-brand { color: var(--brand-dark); font-family: var(--serif); font-size: 1.2rem; text-decoration: none; }
 .admin-brand span { margin-left: .5rem; color: var(--muted); font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 .admin-account { display: flex; align-items: center; gap: .9rem; color: var(--muted); font-size: .82rem; }
+.admin-account[hidden] { display: none; }
 .auth-panel { width: min(100% - 2rem, 470px); margin: clamp(3rem, 10vh, 7rem) auto; padding: clamp(1.5rem, 5vw, 3rem); background: var(--paper); box-shadow: 0 1.2rem 4rem rgba(78,19,20,.08); }
 .auth-panel h1 { margin-bottom: 1rem; font-size: clamp(2.5rem, 8vw, 4rem); }
 .auth-copy, .auth-note { color: var(--muted); font-size: .9rem; }
