@@ -1,0 +1,1 @@
+Lokal gespeichert ist das auf der bisherigen Website veröffentlichte Foto von Annika und Johannes Brummack. Es wird auf „Über uns“ eingesetzt. Weitere Mitarbeiterfotos wurden im Originalauftritt nicht gefunden. Fundstelle und Quelle: ../image-sources.csv.
