@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f3">
+  <title>Website-Editor – Alte Schule Bojum</title>
+  <link rel="stylesheet" href="site.css?v=10">
+  <link rel="stylesheet" href="admin.css">
+  <script type="module" src="admin.js"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <a class="admin-brand" href="index.html">Alte Schule Bojum <span>Website-Editor</span></a>
+      <div class="admin-account" id="account-area" hidden>
+        <span id="account-email"></span>
+        <button class="admin-button admin-button--quiet" id="sign-out" type="button">Abmelden</button>
+      </div>
+    </header>
+
+    <section class="auth-panel" id="auth-panel">
+      <p class="eyebrow">Geschützter Bereich</p>
+      <h1>Website bearbeiten</h1>
+      <p class="auth-copy">Melde dich mit dem freigeschalteten Admin-Konto an. Änderungen werden erst nach dem Veröffentlichen auf der Website sichtbar.</p>
+      <form class="auth-form" id="auth-form">
+        <label for="auth-email">E-Mail-Adresse</label>
+        <input id="auth-email" name="email" type="email" autocomplete="email" required>
+        <label for="auth-password">Passwort</label>
+        <input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+        <button class="admin-button" id="auth-submit" type="submit">Anmelden</button>
+        <button class="admin-link-button" id="register-account" type="button">Admin-Konto registrieren</button>
+      </form>
+      <p class="admin-status" id="auth-status" role="status" aria-live="polite"></p>
+      <p class="auth-note">Für Änderungen müssen Supabase Auth und die SQL-Regeln aus <code>supabase/migrations</code> eingerichtet sein. Es gibt keinen Admin-Bypass im Browser.</p>
+    </section>
+
+    <section class="editor-shell" id="editor-shell" hidden>
+      <div class="editor-toolbar">
+        <label for="page-select">Bereich</label>
+        <select id="page-select"></select>
+        <span class="editor-spacer"></span>
+        <label class="upload-button" for="image-upload">Bild hochladen</label>
+        <input id="image-upload" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+        <button class="admin-button admin-button--quiet" id="save-draft" type="button">Entwurf speichern</button>
+        <button class="admin-button" id="publish-page" type="button">Veröffentlichen</button>
+      </div>
+      <div class="editor-workspace">
+        <aside class="editor-sidebar">
+          <div class="editor-sidebar-tabs" role="tablist">
+            <button type="button" class="is-active" data-editor-panel="layers">Ebenen</button>
+            <button type="button" data-editor-panel="styles">Stil</button>
+            <button type="button" data-editor-panel="blocks">Bausteine</button>
+          </div>
+          <div class="editor-panel is-active" id="layers-panel"></div>
+          <div class="editor-panel" id="styles-panel"></div>
+          <div class="editor-panel" id="blocks-panel"></div>
+          <p class="sidebar-hint">Elemente auf der Seite lassen sich direkt auswählen, bearbeiten und verschieben. Der Änderungsverlauf bleibt im Entwurf, bis du veröffentlichst.</p>
+        </aside>
+        <div class="editor-canvas">
+          <div id="gjs"></div>
+        </div>
+      </div>
+      <p class="admin-status editor-status" id="editor-status" role="status" aria-live="polite"></p>
+      <iframe id="preview-source" title="Seitenvorlage für den Editor" hidden></iframe>
+    </section>
+  </main>
+</body>
+</html>

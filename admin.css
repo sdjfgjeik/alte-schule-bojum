@@ -1,0 +1,74 @@
+.admin-body { min-height: 100vh; background: var(--paper-deep); }
+.admin-shell { min-height: 100vh; }
+.admin-topbar {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .8rem clamp(1rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.admin-brand { color: var(--brand-dark); font-family: var(--serif); font-size: 1.2rem; text-decoration: none; }
+.admin-brand span { margin-left: .5rem; color: var(--muted); font: 600 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.admin-account { display: flex; align-items: center; gap: .9rem; color: var(--muted); font-size: .82rem; }
+.auth-panel { width: min(100% - 2rem, 470px); margin: clamp(3rem, 10vh, 7rem) auto; padding: clamp(1.5rem, 5vw, 3rem); background: var(--paper); box-shadow: 0 1.2rem 4rem rgba(78,19,20,.08); }
+.auth-panel h1 { margin-bottom: 1rem; font-size: clamp(2.5rem, 8vw, 4rem); }
+.auth-copy, .auth-note { color: var(--muted); font-size: .9rem; }
+.auth-form { display: grid; gap: .65rem; margin-top: 2rem; }
+.auth-form label { margin-top: .55rem; font-size: .8rem; font-weight: 650; }
+.auth-form input, .editor-toolbar select { min-height: 46px; padding: .65rem .75rem; border: 1px solid var(--line); background: white; }
+.admin-button, .admin-link-button, .upload-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem .9rem;
+  border: 1px solid var(--brand-dark);
+  background: var(--brand-dark);
+  color: white;
+  cursor: pointer;
+  font: 650 .78rem var(--sans);
+  text-decoration: none;
+}
+.admin-button:disabled { cursor: wait; opacity: .6; }
+.admin-button--quiet { background: white; color: var(--brand-dark); }
+.admin-link-button { justify-self: start; padding: .35rem 0; border: 0; background: transparent; color: var(--brand-dark); text-decoration: underline; text-underline-offset: 3px; }
+.admin-status { min-height: 1.4rem; margin: .8rem 0 0; color: var(--brand-dark); font-size: .82rem; }
+.admin-status[data-error="true"] { color: #a11b1b; }
+.auth-note { margin: 2rem 0 0; font-size: .76rem; }
+.editor-shell { height: calc(100vh - 76px); min-height: 540px; }
+.editor-toolbar { display: flex; min-height: 64px; align-items: center; gap: .65rem; padding: .6rem 1rem; border-bottom: 1px solid var(--line); background: white; }
+.editor-toolbar label { color: var(--muted); font-size: .75rem; }
+.editor-toolbar select { min-width: min(100%, 220px); min-height: 40px; }
+.editor-spacer { flex: 1; }
+.upload-button { min-height: 40px; background: white; color: var(--brand-dark); }
+.editor-workspace { display: grid; height: calc(100% - 95px); grid-template-columns: minmax(210px, 260px) minmax(0, 1fr); }
+.editor-sidebar { display: flex; min-height: 0; flex-direction: column; border-right: 1px solid var(--line); background: white; }
+.editor-sidebar-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+.editor-sidebar-tabs button { min-height: 44px; border: 0; background: white; color: var(--muted); cursor: pointer; font-size: .72rem; }
+.editor-sidebar-tabs button.is-active { border-bottom: 2px solid var(--brand-primary); color: var(--brand-dark); }
+.editor-panel { display: none; min-height: 0; flex: 1; overflow: auto; }
+.editor-panel.is-active { display: block; }
+.sidebar-hint { margin: 0; padding: .9rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .7rem; }
+.editor-canvas { min-width: 0; overflow: hidden; background: #e9e9e9; }
+#gjs { height: 100%; }
+.gjs-one-bg { background: #fff; }
+.gjs-two-color { color: var(--brand-dark); }
+.gjs-three-bg { background: var(--brand-primary); color: #fff; }
+.gjs-four-color, .gjs-four-color-h:hover { color: var(--brand-primary); }
+#preview-source { position: absolute; width: 1px; height: 1px; border: 0; opacity: 0; pointer-events: none; }
+@media (max-width: 700px) {
+  .admin-topbar { min-height: 64px; }
+  .admin-brand span { display: block; margin: .1rem 0 0; }
+  .admin-account { gap: .4rem; font-size: .68rem; }
+  .editor-shell { height: calc(100vh - 64px); }
+  .editor-toolbar { flex-wrap: wrap; gap: .45rem; padding: .55rem; }
+  .editor-toolbar select { flex: 1 1 145px; }
+  .editor-spacer { display: none; }
+  .editor-toolbar .admin-button, .upload-button { min-height: 36px; padding: .45rem .58rem; font-size: .68rem; }
+  .editor-workspace { height: calc(100% - 146px); grid-template-columns: 132px minmax(0, 1fr); }
+  .editor-sidebar-tabs button { font-size: .62rem; }
+  .sidebar-hint { padding: .55rem; font-size: .62rem; }
+}
